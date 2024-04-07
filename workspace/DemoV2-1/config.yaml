@@ -1,0 +1,9 @@
+env: MiniGrid-DoorKey-5x5-v0
+train: false
+evaluate: true
+seed: 0
+episodes: 10
+episode_max_frame: 10000
+pause: 0.1 # pause duration between two consequent actions of the agent (default: 0.1)
+procs: 16 # number of processes (default: 16)
+gif: '' # store output as gif with the given filename

@@ -1,0 +1,101 @@
+<!--id:4dcda9d646-->
+<root label="DoorKey">
+    <BehaviorTree id="DoorKey">
+        <Selector>
+            <Selector>
+                <IsReachGoal/>
+                <Sequence>
+                    <Selector>
+                        <CanMoveToGoal/>
+                        <!--开门-->
+                        <Selector>
+                            <IsDoorOpen/>
+                            <Sequence>
+                                <Sequence>
+                                    <!--持有钥匙-->
+                                    <Selector>
+                                        <IsDoorClosed/>
+                                        <Sequence>
+                                            <IsDoorLocked/>
+                                            <!--取钥匙的流程-->
+                                            <Selector>
+                                                <!--拿钥匙-->
+                                                <Selector>
+                                                    <IsKeyHeld/>
+                                                    <Sequence>
+                                                        <!--转向钥匙-->
+                                                        <Selector>
+                                                            <IsKeyInFront/>
+                                                            <Sequence>
+                                                                <!--接近钥匙-->
+                                                                <Selector>
+                                                                    <IsNearKey/>
+                                                                    <Sequence>
+                                                                        <And>
+                                                                            <CanApproachKey/>
+                                                                            <IsDoorLocked/>
+                                                                            <Not>
+                                                                                <IsKeyHeld/>
+                                                                            </Not>
+                                                                        </And>
+                                                                        <ApproachKey/>
+                                                                    </Sequence>
+                                                                </Selector>
+                                                                <TurnToKey/>
+                                                            </Sequence>
+                                                        </Selector>
+                                                        <PickUpKey/>
+                                                    </Sequence>
+                                                </Selector>
+                                            </Selector>
+                                        </Sequence>
+                                    </Selector>
+                                    <!--转向门-->
+                                    <Selector>
+                                        <IsDoorInFront/>
+                                        <Sequence>
+                                            <!--接近门-->
+                                            <Selector>
+                                                <IsNearDoor/>
+                                                <Sequence>
+                                                    <And>
+                                                        <CanApproachDoor/>
+                                                        <Or>
+                                                            <IsDoorOpen/>
+                                                            <IsDoorClosed/>
+                                                            <And>
+                                                                <IsDoorLocked/>
+                                                                <IsKeyHeld/>
+                                                            </And>
+                                                        </Or>
+                                                    </And>
+                                                    <ApproachDoor/>
+                                                    <IsNearDoor/>
+                                                </Sequence>
+                                            </Selector>
+                                            <TurnToDoor/>
+                                        </Sequence>
+                                    </Selector>
+                                </Sequence>
+                                <OpenDoor/>
+                            </Sequence>
+                        </Selector>
+                    </Selector>
+                    <MoveToGoal/>
+                </Sequence>
+            </Selector>
+
+            <ExploreUnseen/>
+
+            <!--随机移动-->
+            <RandomAction/>
+        </Selector>
+        <!--        <LearningSelector>-->
+        <!--            <MoveToGoal/>-->
+        <!--            <MoveToKey/>-->
+        <!--            <MoveToDoor/>-->
+        <!--            <PickUpKey/>-->
+        <!--            <OpenDoor/>-->
+        <!--        </LearningSelector>-->
+    </BehaviorTree>
+</root>

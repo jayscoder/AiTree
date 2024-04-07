@@ -1,0 +1,24 @@
+<!--id:598fa083fc-->
+<root>
+    <!--BehaviorTree表示行为树-->
+    <BehaviorTree id="EmptyTree">
+        <RlNode model="RlNode" algo="ppo" recurrence="1" save_interval="1">
+            <RlAction>
+                <ExploreUnseen></ExploreUnseen>
+                <MoveToGoal></MoveToGoal>
+            </RlAction>
+<!--            <RlGoal>-->
+<!--                <IsReachGoal/>-->
+<!--            </RlGoal>-->
+        </RlNode>
+        <!--            <Selector>-->
+        <!--                <IsReachGoal/>-->
+        <!--                <Sequence>-->
+        <!--                    <IsGoalFound/>-->
+        <!--                    <MoveToGoal/>-->
+        <!--                </Sequence>-->
+        <!--                &lt;!&ndash;                <ExploreUnseen/>&ndash;&gt;-->
+        <!--                -->
+        <!--            </Selector>-->
+    </BehaviorTree>
+</root>

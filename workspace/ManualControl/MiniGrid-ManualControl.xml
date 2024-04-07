@@ -1,0 +1,6 @@
+<!--id:4dcda9d646-->
+<root label="DoorKey">
+    <BehaviorTree id="DoorKey">
+        <ManualControl/>
+    </BehaviorTree>
+</root>

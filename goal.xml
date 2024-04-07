@@ -1,0 +1,61 @@
+<Sequence>
+    <Selector>
+        <IsReachGoal/>
+        <Sequence>
+            <Sequence>
+                <Selector>
+                    <IsGoalFound color=""/>
+                    <Sequence>
+                        <IsDoorFound color=""/>
+                        <IsDoorOpen color=""/>
+                    </Sequence>
+                </Selector>
+                <Selector>
+                    <CanMoveToGoal/>
+                    <Sequence>
+                        <Sequence>
+                            <Selector>
+                                <IsGoalFound color=""/>
+                                <Sequence>
+                                    <IsDoorFound color=""/>
+                                    <IsDoorOpen color=""/>
+                                </Sequence>
+                            </Selector>
+                            <CanMoveToGoal/>
+                        </Sequence>
+                        <MoveToGoal/>
+                    </Sequence>
+                    <Sequence>
+                        <Selector>
+                            <Invert>
+                                <IsGoalFound/>
+                            </Invert>
+                            <Invert>
+                                <IsKeyFound/>
+                            </Invert>
+                            <Invert>
+                                <IsDoorFound/>
+                            </Invert>
+                        </Selector>
+                        <ExploreUnseen/>
+                    </Sequence>
+                </Selector>
+            </Sequence>
+            <MoveToGoal/>
+        </Sequence>
+        <Sequence>
+            <Selector>
+                <Invert>
+                    <IsGoalFound/>
+                </Invert>
+                <Invert>
+                    <IsKeyFound/>
+                </Invert>
+                <Invert>
+                    <IsDoorFound/>
+                </Invert>
+            </Selector>
+            <ExploreUnseen/>
+        </Sequence>
+    </Selector>
+</Sequence>

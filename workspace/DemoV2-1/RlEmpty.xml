@@ -1,0 +1,24 @@
+<!--id:598fa083fc-->
+<root>
+    <!--BehaviorTree表示行为树-->
+    <BehaviorTree id="EmptyTree">
+        <RlNode model="RlNode" algo="ppo" recurrence="4" save_interval="1">
+            <RlAction>
+                <ExploreUnseen></ExploreUnseen>
+
+                <MoveToGoal></MoveToGoal>
+
+                <PickUpKey></PickUpKey>
+                <OpenDoor></OpenDoor>
+
+                <ApproachKey/>
+                <ApproachDoor/>
+
+                <TurnToDoor/>
+                <TurnToKey/>
+
+                <RandomAction/>
+            </RlAction>
+        </RlNode>
+    </BehaviorTree>
+</root>

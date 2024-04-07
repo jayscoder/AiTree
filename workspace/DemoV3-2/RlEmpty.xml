@@ -1,0 +1,7 @@
+<!--id:598fa083fc-->
+<root>
+    <!--BehaviorTree表示行为树-->
+    <BehaviorTree id="EmptyTree">
+        <RlNode model="RlNode" algo="ppo" recurrence="4" save_interval="1"/>
+    </BehaviorTree>
+</root>

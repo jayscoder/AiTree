@@ -1,0 +1,18 @@
+<!--id:598fa083fc-->
+<root>
+    <!--BehaviorTree表示默认处理器-->
+    <Processor id="P1">
+        <!--BehaviorTree表示行为树-->
+        <BehaviorTree id="EmptyTree">
+            <Selector>
+                <IsReachGoal/>
+                <Sequence>
+                    <IsGoalFound/>
+                    <MoveToGoal/>
+                </Sequence>
+                <!--                <ExploreUnseen/>-->
+                <ManualControl/>
+            </Selector>
+        </BehaviorTree>
+    </Processor>
+</root>

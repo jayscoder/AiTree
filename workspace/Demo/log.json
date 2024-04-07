@@ -1,0 +1,17 @@
+{
+    "num_frames": 429,
+    "return_per_episode": {
+        "mean": 0.95166015625,
+        "std": 0.0,
+        "min": 0.95166015625,
+        "max": 0.95166015625
+    },
+    "num_frames_per_episode": {
+        "mean": 42.9,
+        "std": 1.8681541692269403,
+        "min": 41,
+        "max": 47
+    },
+    "duration": 0,
+    "fps": 490.44153236027637
+}

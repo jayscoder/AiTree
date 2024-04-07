@@ -1,0 +1,47 @@
+<!--id:4dcda9d646-->
+<root label="DoorKey">
+    <BehaviorTree id="DoorKey">
+        <Selector>
+            <Selector>
+                <CanMoveToGoal/>
+                <!--开门-->
+                <Sequence>
+                    <Selector>
+                        <IsDoorOpen/>
+                        <!--取钥匙并打开门的流程-->
+                        <RlNode model="OpenDoor" algo="ppo" recurrence="4" save_interval="1">
+                            <RlAction>
+                                <TurnToKey/>
+                                <TurnToDoor/>
+                                <MoveToKey/>
+                                <MoveToDoor/>
+                                <PickUpKey/>
+                                <OpenDoor/>
+                                <ExploreUnseen/>
+                            </RlAction>
+                            <RlGoal>
+                                <IsDoorOpen/>
+                            </RlGoal>
+                        </RlNode>
+                    </Selector>
+
+                    <Selector>
+                        <CanMoveToGoal/>
+                        <!--寻找终点-->
+                        <RlNode model="MoveToGoal" algo="ppo" recurrence="4" save_interval="1">
+                            <RlAction>
+                                <MoveToGoal/>
+                                <ExploreUnseen/>
+                            </RlAction>
+                            <RlGoal>
+                                <CanMoveToGoal/>
+                            </RlGoal>
+                        </RlNode>
+                    </Selector>
+                    <MoveToGoal/>
+                </Sequence>
+            </Selector>
+        </Selector>
+    </BehaviorTree>
+</root>
+
